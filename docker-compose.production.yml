@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    image: docker-nextjs
+    build:
+      context: "."
+      dockerfile: Dockerfile.production
+    env_file:
+      - .env.development
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
